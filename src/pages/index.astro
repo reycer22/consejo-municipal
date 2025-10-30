@@ -12,6 +12,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
+		
+		<div class="background-shapes">
+  		<div class="circle circle1"></div>
+  		<div class="circle circle2"></div>
+  		<div class="circle circle3"></div>
+		</div>
+
 		<Header />
 		<main>
 			<h1> Hola Ciudadano!</h1>
@@ -118,4 +125,49 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		</main>
 		<Footer />
 	</body>
+
+	<style>
+		.background-shapes {
+  		position: absolute;
+  		width: 100vw;
+  		height: 100vh;
+  		top: 0;
+  		left: 0;
+  		pointer-events: none;
+  		overflow: hidden;
+  		z-index: -1;
+		}
+		
+		.circle {
+  		position: absolute;
+  		border-radius: 50%;
+  		opacity: 0.2;
+		}
+		
+		.circle1 {
+  		width: 180px;
+  		height: 180px;
+  		background: #f2c94c;
+  		top: 30px;
+  		left: 5vw;
+		}
+
+		.circle2 {
+  		width: 240px;
+  		height: 240px;
+  		background: #56ccf2;
+  		bottom: 50px;
+  		right: 8vw;
+		}
+
+		.circle3 {
+  		width: 90px;
+  		height: 90px;
+  		background: #ffa500;
+  		top: 200px;
+  		right: 35vw;
+		}
+	</style>
+
 </html>
+
