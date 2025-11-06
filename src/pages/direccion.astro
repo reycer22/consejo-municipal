@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import AboutHeroImage from '../assets/logo3.png';
+import '../styles/home.css';
 ---
 
 <!DOCTYPE html>
@@ -12,51 +14,69 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       title={`Dirección | ${SITE_TITLE}`}
       description="Página de la Dirección de Atención y Orientación al Ciudadano del Consejo Municipal"
     />
+
     <style>
-      main {
-        width: 960px;
-        margin: 2rem auto;
-        padding: 2rem;
-        background: rgb(var(--gray-light));
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
+    ul li a,
+    p a {
+      color: #6b6b6b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-      h1 {
-        color: rgb(var(--accent));
-        text-align: center;
-        margin-bottom: 1rem;
-      }
+    ul li a:hover,
+    p a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
 
-      p {
-        color: rgb(var(--black));
-        line-height: 1.6;
-        text-align: justify;
-      }
-
-      section {
-        margin-top: 2rem;
-      }
-
-      section h2 {
-        color: rgb(var(--accent));
-        margin-bottom: 0.5rem;
-      }
-    </style>
   </head>
 
   <body>
     <Header />
 
     <main>
-      <h1>Dirección de Atención y Orientación al Ciudadano</h1>
+
+      <div class="arrow arrow-left">
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+    		</div>
+
+    		<div class="arrow arrow-right">
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+      		<div class="chevron"></div>
+    		</div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+
+   				<h1>Dirección de Atención y </h1>
+   				<h2>Orientación al Ciudadano </h2>
+          <img src={AboutHeroImage.src} alt="Logo D" style="max-width: 600px; width: 90%; height: auto; margin-top: 1.5rem; border-radius: 30px;" />
+  				</div>
+
       <p>
         Bienvenido a la sección de <strong>Dirección</strong> del Consejo Municipal. Aquí podrás encontrar información sobre
         los servicios de atención al ciudadano, orientación institucional y enlaces de contacto directo con nuestras oficinas.
       </p>
 
-      <section>
-        <h2>📍 Ubicación</h2>
+      <p>Nuestra Oficina Promueve la Participación Ciudadana, suministra y ofrece de forma oportuna, adecuada y efectiva la información 
+        requerida, así como también orientar, recibir y tramitar denuncias, quejas, reclamos, sugerencias, peticiones y 
+         olicitudes que formulen los ciudadanos, sea por vía presencial o por vía telefónica o telemática.
+      
+      </p>
+
+      <p>Dir. Josethlyn Silva </p
+
+     <section>
+        <h2>Ubicación</h2>
         <p>
           Nuestras oficinas están ubicadas en la sede principal del Consejo Municipal, donde brindamos atención personalizada a
           los ciudadanos de la comunidad.
@@ -64,7 +84,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       </section>
 
       <section>
-        <h2>🕐 Horarios de Atención</h2>
+        <h2>Horarios de Atención</h2>
         <p>
           Lunes a Viernes, de 8:00 a.m. a 4:00 p.m.  
           También puedes comunicarte a través de los canales oficiales de atención digital.
@@ -72,10 +92,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       </section>
 
       <section>
-        <h2>📞 Contacto</h2>
-        <p>
-          Teléfono: (0212) 000-0000  
-          Correo electrónico: <a href="mailto:atencion@consejomunicipal.gob.ve">atencion@consejomunicipal.gob.ve</a>
+        <h2>Contacto</h2>
+        <p> 
+          <a href="mailto:atencion@consejomunicipal.gob.ve">concejochacaodaoc@gmail.com</a>
+          <p>
+				<a href="https://www.instagram.com/daoc_concejochacao" target="_blank" rel="noopener noreferrer">
+  				@daoc_concejochacao
+				</a>
+			</p>
         </p>
       </section>
     </main>
