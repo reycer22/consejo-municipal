@@ -1,0 +1,146 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE } from '../../consts';
+import { getCollection } from 'astro:content';
+
+const news = await getCollection('news');
+
+const sortedNews = news
+  .sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+  .map(item => ({
+    ...item,
+    slug: item.data.slug || item.slug,
+  }));
+---
+<html lang="es">
+  <head>
+    <BaseHead title={`Noticias | ${SITE_TITLE}`} />
+    <style>
+  /* --- Estructura base del documento --- */
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #fafafa; /* fondo claro general */
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    color: #222; /* color base del texto */
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* --- Contenedor principal --- */
+  main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+
+  /* --- Título principal --- */
+  h1.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827; /* 🔹 más oscuro → mejor contraste */
+    margin-bottom: 0.5rem;
+  }
+
+  /* --- Subtítulo debajo del título --- */
+  p.subtitle {
+    text-align: center;
+    color: #374151; /* gris medio */
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  /* --- Rejilla de noticias (layout flexible) --- */
+  .news-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* --- Tarjeta de noticia individual --- */
+  .card {
+    background: #f8f9fa; /* gris claro */
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  }
+
+  /* --- Imagen dentro de la tarjeta --- */
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #e5e7eb; /* gris muy suave detrás por si tarda en cargar */
+  }
+
+  /* --- Contenido textual de la tarjeta --- */
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-content h2 {
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card-content p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .card-content small {
+    color: #6b7280;
+    font-size: 0.85rem;
+  }
+
+  /* --- Responsivo: pantallas pequeñas --- */
+  @media (max-width: 600px) {
+    h1.page-title {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div style="text-align: center; margin-top: 2rem;"> 
+      <h1 >Últimas Noticias 📰 </h1>
+      <p class="subtitle">Descubre lo más reciente del Consejo Municipal</p> </div>
+      <div class="news-grid">
+        {sortedNews.map(item => (
+          <a href={`/news/${item.id}/`} class="card">
+            {item.data.heroImage && <img src={item.data.heroImage.src} alt={item.data.title} loading="lazy" />}
+            <div class="card-content">
+              <h2>{item.data.title}</h2>
+              <p>{item.data.description}</p>
+              <small>{new Date(item.data.pubDate).toLocaleDateString('es-VE', { year:'numeric', month:'long', day:'numeric' })}</small>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

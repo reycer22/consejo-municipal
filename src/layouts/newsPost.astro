@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import '../styles/home.css'; 
+
+type Props = {
+  title: string;
+  description?: string;
+  pubDate: string;
+  heroImage?: string;
+};
+
+const { title, description, pubDate, heroImage } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+      main { max-width: 900px; margin: 3rem auto; padding: 1rem; line-height: 1.7; }
+      .hero { width: 100%; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.5); }
+      h1 { color: #4c4848; }
+      .date { color: #aaa; font-size: 0.9rem; margin: 0.5rem 0 1rem 0; }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <div class="arrow arrow-left">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+    </div>
+
+    <div class="arrow arrow-right">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+    </div>
+    <!-- 🔼 Fin de las flechas -->
+    <main>
+      {heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="hero" />}
+      <h1>{title}</h1>
+      <p class="date">
+        <FormattedDate date={pubDate} />
+      </p>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
