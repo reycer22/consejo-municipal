@@ -10,10 +10,21 @@ const blog = defineCollection({
       pubDate: z.coerce.date().optional(),
       updatedDate: z.coerce.date().optional(),
       heroImage: image().optional(),
-      slug: z.string().optional(), // ✅ ← esta línea nueva
+      slug: z.string().optional(),
     }),
 });
 
-/* ✅ Colección NEWS FIX con slug */
 const news = defineCollection({
-  loader: glob({ base: './src
+  loader: glob({ base: './src/content/news', pattern: '**/*.{md,mdx}' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date().optional(),
+      updatedDate: z.coerce.date().optional(),
+      heroImage: image().optional(),
+      slug: z.string().optional(),
+    }),
+});
+
+export const collections = { blog, news };

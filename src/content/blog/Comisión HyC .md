@@ -1,9 +1,15 @@
 ---
 title: 'Comisión de Hacienda y Contraloría'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: null 
-heroImage: '../../assets/blog-placeholder-5.jpg'
+pubDate: 2024-01-01
+heroImage: '../../assets/LogoHC.jpg'
 ---
+
+Conoce de las materias referidas a los bienes, ingresos y obligaciones que forman el activo y el pasivo de la hacienda pública municipal, así como de las rentas cuya administración corresponde al Municipio. [...]
+
+Prueba 
+
+Holaa
 
 Conoce de las materias referidas a los bienes, ingresos y obligaciones que forman el activo y el pasivo de la hacienda pública municipal, así como de las rentas cuya administración corresponde al Municipio. Vigila, controla y fiscaliza el uso adecuado, por parte de la administración, de los ingresos y/o activos percibidos a través del situado, impuestos, gravámenes y deudas.
 
@@ -13,6 +19,7 @@ Conoce de exoneraciones sobre espectáculos públicos con fines sociales, rifas 
 
 CONCEJAL: Máximo Sánchez
 
+Pruena
 
 <a href="https://www.instagram.com/daoc_concejochacao" target="_blank" rel="noopener noreferrer">
  @chacaochc
