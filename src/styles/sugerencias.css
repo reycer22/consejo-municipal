@@ -1,0 +1,80 @@
+/* Caja principal */
+.sugerencias-box {
+  max-width: 650px;
+  margin: 4rem auto;
+  padding: 2.8rem;
+  border-radius: 22px;
+
+  background: linear-gradient(135deg, #e0e0e0, #ffffff);
+  border: 1px solid #d8d8d8;
+
+  /* Sombra suave y elegante tipo interfaz moderna */
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.03),
+    0 12px 28px rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Sutil animación al pasar el mouse */
+.sugerencias-box:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.05),
+    0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+.sugerencias-content h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  text-align: center;
+}
+
+/* Texto */
+.sugerencias-content p {
+  margin: 0 auto 1.8rem;
+  max-width: 540px;
+  text-align: center;
+  line-height: 1.55;
+  font-size: 1rem;
+  color: #555555;
+}
+
+/* Botón */
+.sugerencias-btn {
+  display: inline-block;
+  padding: 0.75rem 1.6rem;
+
+  background: linear-gradient(135deg, #e4dbdb, #e5e5e5);
+  border: 1px solid #cccccc;
+  border-radius: 14px;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover del botón */
+.sugerencias-btn:hover {
+  background: linear-gradient(135deg, #e9e9e9, #dcdcdc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+  .sugerencias-box {
+    padding: 2rem;
+    margin: 2.5rem auto;
+  }
+
+  .sugerencias-content h2 {
+    font-size: 1.5rem;
+  }
+}

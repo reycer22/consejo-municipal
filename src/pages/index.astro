@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import AboutHeroImage from '../assets/logo1.png';
 import '../styles/home.css';
+import '../styles/sugerencias.css';
 ---
 
 <!doctype html>
@@ -150,7 +151,32 @@ import '../styles/home.css';
 				</a>
 			</p>
 
+<section class="sugerencias-box">
+  <div class="sugerencias-content">
+    <h2>Sugerencias y Comentarios</h2>
+    <p>
+      Tu opinión es importante para seguir mejorando el servicio al ciudadano.
+      Comparte tus ideas, preguntas o sugerencias a través del formulario.
+    </p>
+
+    
+   <center><a 
+      href="https://docs.google.com/forms/d/e/1FAIpQLSehdGuB9LmR_f9xcN_mrzHeZ0fm1b1mMOm2PYQcsDolNkIeIQ/viewform?usp=header" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="sugerencias-btn"
+    >
+      Abrir formulario
+    </a></center>
+
+  
+
+  </div>
+</section>
+
 		</main>
+
+		
 		<Footer />
 		
 	</body>

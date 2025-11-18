@@ -7,7 +7,7 @@ import Layout from '../layouts/BlogPost.astro';
 <Layout
 	title="Secretaria Municipal"
 	description="Lorem ipsum dolor sit amet"
-	heroImage={AboutHeroImage}
+	
 >
 	<p>
 		Es un órgano auxiliar del Municipio, encargado de garantizar el apoyo eficiente 
@@ -20,6 +20,168 @@ import Layout from '../layouts/BlogPost.astro';
 
 	<p>Sub sec. Ibelisse Rodríguez</p>
 
-	<h1>Gacetas</h1>
+	<center> <h1>Gacetas</h1> </center>
+
+	<style>
+	.pdf-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.card {
+		background: linear-gradient(135deg, #e0e0e0, #ffffff);
+		border-radius: 16px;
+		padding: 1.2rem;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		transition: transform .18s ease, box-shadow .18s ease;
+		text-align: center;
+	}
+
+	.card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+	}
+
+	
+
+	.card h3 {
+		margin: 0;
+		font-size: 1.1rem;
+		color: #1a1a1a;
+		margin-bottom: .8rem;
+	}
+
+	.btn {
+		display: inline-block;
+		background: #575757;
+		color: white;
+		padding: .55rem 1.2rem;
+		font-size: .9rem;
+		font-weight: 600;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: background .2s ease;
+	}
+
+	.btn:hover {
+		background: #003f9e;
+	}
+</style>
+
+<div class="pdf-grid">
+
+	<!-- 🔵 DEROGADAS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>DEROGADAS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/1FXtbLyTYQLG6s4u9RZPhsdBrj3qgos4f" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 EDUCACIÓN -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>EDUCACIÓN</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/1wnakccBolEDHaw5CV0_fAq6I8WkpNidy" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 INSTITUTOS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>INSTITUTOS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/1-0-p-TTa6_jyOkcCiBP6StVXnHDuN2Ta" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 ADMINISTRATIVAS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>ORDENANZAS ADMINISTRATIVAS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/1-Duo-vgLaGQ3g2bnkdZebHd184Ii_UOR" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 AMBIENTALES -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>ORDENANZAS AMBIENTALES</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/10gNNwAsHU_cGk-CDDEQ1a4iRSIBLGAfR" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 ARMONIZACIÓN 2023 -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>ARMONIZACIÓN 2023</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/1Vf-XvKKPSHJ8nDaPkbYrg-09bRw0nDC9" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 ORGANIZATIVAS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>ORGANIZATIVAS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/10ubq1A73mGdnA8jT0oS2blC_y1GRP_PY" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 SOCIALES -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>SOCIALES</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/155-JXwwX05mKPAX1yF7959O5YXkr6P8e" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 TRÁNSITO -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>TRÁNSITO</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/154G_uVJdn0wDLQ6YbZrlIanJCzkBBbjm" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 TRIBUTARIAS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>TRIBUTARIAS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/153DJf8ZMsx7InrEBZgK-E11XxOaNdxFA" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 URBANÍSTICAS -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>URBANÍSTICAS</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/150vlEFK2fAEA-cQSEBw_HAfwGPB0W1nL" target="_blank">
+			Ver ordenanzas
+		</a>
+	</div>
+
+	<!-- 🔵 PREMIOS Y CONDECORACIONES -->
+	<div class="card">
+		<div class="placeholder"></div>
+		<h3>PREMIOS Y CONDECORACIONES</h3>
+		<a class="btn" href="https://drive.google.com/drive/folders/150naH65Rf-e4EdidJUsAgKtk4p8LskpV" target="_blank">
+			Ver documentos
+		</a>
+	</div>
+
+</div>
+
+
 	
 </Layout>
