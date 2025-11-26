@@ -20,10 +20,48 @@ const { title, description, pubDate, heroImage } = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
     <style>
-      main { max-width: 900px; margin: 3rem auto; padding: 1rem; line-height: 1.7; }
-      .hero { width: 100%; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 3px 12px rgba(0,0,0,0.5); }
-      h1 { color: #4c4848; }
-      .date { color: #aaa; font-size: 0.9rem; margin: 0.5rem 0 1rem 0; }
+     /* --- Estilo tipo “ejemplo fino” para tu página de noticia --- */
+
+main {
+  width: calc(100% - 2em);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.7;
+}
+
+/* Contenedor de imagen estilo blog pro */
+.hero {
+  width: 100%;
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.30);
+  object-fit: cover;
+}
+
+/* Contenedor del texto principal */
+.prose {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 1em;
+  color: #4c4848;
+}
+
+h1 {
+  margin-bottom: 0.8em;
+  padding: 0.5em 0;
+  text-align: center;
+  line-height: 1.1;
+  color: #4c4848;
+}
+
+.date {
+  margin-bottom: 0.5em;
+  color: #888;
+  text-alig
+
     </style>
   </head>
   <body>
@@ -46,7 +84,6 @@ const { title, description, pubDate, heroImage } = Astro.props;
       <div class="chevron"></div>
     </div>
     <!-- 🔼 Fin de las flechas -->
-
 
 
     <main>
