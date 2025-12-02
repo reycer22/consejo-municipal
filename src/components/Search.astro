@@ -1,0 +1,131 @@
+<form class="search-form" id="form-busqueda" autocomplete="off">
+  <input type="text" id="input-busqueda" placeholder="Buscar..." />
+  <button type="submit">🔍</button>
+</form>
+
+<div id="resultados-busqueda"></div>
+
+<style>
+/* 📌 TU STYLE ORIGINAL, SIN CAMBIAR NADA */
+.search-form {
+  position: absolute;
+  top: 110px;
+  left: 16px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  background: rgba(235, 235, 235, 0.6);
+  border-radius: 7px;
+  box-shadow: 0 2px 8px rgba(80,80,80,0.09);
+  padding: 2px 6px;
+  z-index: 10;
+  opacity: 0.82;
+}
+
+.search-form input[type="text"] {
+  background: rgba(250,250,250,0.4);
+  color: #555;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-size: 0.95em;
+  margin-right: 3px;
+  width: 70px;
+}
+
+.search-form button {
+  background: rgba(220,220,220,0.4);
+  color: #666;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+  opacity: 0.85;
+}
+
+#resultados-busqueda {
+  display: none;
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 160px;
+  position: absolute;
+  top: 150px;
+  left: 16px;
+  z-index: 20;
+  list-style: none;
+  font-size: 0.95em;
+}
+
+.result-item {
+  padding: 6px;
+  border-bottom: 1px solid #ececec;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item:hover {
+  background: #f0f0f0;
+}
+</style>
+
+<script client:load>
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/minisearch@6.1.0/dist/umd/index.min.js";
+  document.head.appendChild(script);
+
+  script.onload = async () => {
+    let pagesIndex;
+
+    try {
+      // CARGA DESDE PUBLIC (camino correcto en Astro)
+      const mod = await import("../searchIndex.mjs");
+      pagesIndex = mod.pagesIndex;
+    } catch (e) {
+      console.error("❌ Error cargando el índice:", e);
+      return;
+    }
+
+    const miniSearch = new MiniSearch({
+  fields: ["title", "text"],
+  storeFields: ["title", "url", "text"],
+  idField: "id"
+});
+
+    miniSearch.addAll(pagesIndex);
+
+    const form = document.getElementById("form-busqueda");
+    const input = document.getElementById("input-busqueda");
+    const resultados = document.getElementById("resultados-busqueda");
+
+    form.addEventListener("submit", (e) => e.preventDefault());
+
+    input.addEventListener("input", () => {
+      const q = input.value.trim();
+
+      if (!q) {
+        resultados.style.display = "none";
+        resultados.innerHTML = "";
+        return;
+      }
+
+      const found = miniSearch.search(q);
+
+      resultados.style.display = "block";
+      resultados.innerHTML =
+        found.length === 0
+          ? "<p style='padding:6px;'>No se encontraron resultados.</p>"
+          : found.map(item => `
+              <div class="result-item">
+                <a href="${item.url}">${item.title}</a>
+                <p>${item.text.slice(0,80)}...</p>
+              </div>
+            `).join("");
+    });
+  };
+</script>
