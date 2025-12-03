@@ -5,91 +5,129 @@ import Search from './Search.astro';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+  <nav>
+    <!-- Logo -->
+    <h2><a href="/">{SITE_TITLE}</a></h2>
 
+    <!-- Botón menú hamburguesa (solo móviles) -->
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
 
-		<div class="internal-links">
-			<HeaderLink href="/">Concejo Municipal de Chacao</HeaderLink>
-			<HeaderLink href="/news">Noticias</HeaderLink>
-			<HeaderLink href="/blog">Comisiones</HeaderLink>
-			<HeaderLink href="/direccion">Ofic. de Atención y Orientación al Ciudadano</HeaderLink>
-			<HeaderLink href="/about">Secretaria Municipal</HeaderLink>
-		</div>
-		
-		<div class="social-links">
-			<a href="https://www.instagram.com/concejochacao?igsh=MTk3bDk5cGxjZzY2eA==" target="_blank">
-  				<span class="sr-only">Follow on Instagram</span>
-  				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" fill="currentColor">
-    				<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-  			</svg>
-			</a>
-			
-			<a href="https://mail.google.com/mail/?view=cm&to=concejochacaodaoc@gmail.com" target="_blank">
-  			<span class="sr-only">Escribir por Gmail</span>
-  			<svg viewBox="0 0 24 24" aria-hidden="true" width="36" height="36" fill="currentColor">
-    		<path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.511l-8 5.714-8-5.714V6h16zM4 18V8.489l8 5.714 8-5.714V18H4z"/>
-  			</svg>
-			</a>
+    <!-- Links internos -->
+    <div class="internal-links">
+      <HeaderLink href="/">Concejo Municipal de Chacao</HeaderLink>
+      <HeaderLink href="/news">Noticias</HeaderLink>
+      <HeaderLink href="/blog">Comisiones</HeaderLink>
+      <HeaderLink href="/direccion">Ofic. de Atención y Orientación al Ciudadano</HeaderLink>
+      <HeaderLink href="/about">Secretaria Municipal</HeaderLink>
+    </div>
 
-		</div>
-	</nav>
+    <!-- Redes sociales -->
+    <div class="social-links">
+      <a href="https://www.instagram.com/concejochacao?igsh=MTk3bDk5cGxjZzY2eA==" target="_blank">
+        <span class="sr-only">Follow on Instagram</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" fill="currentColor">
+          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+        </svg>
+      </a>
+      <a href="mailto:concejochacaodaoc@gmail.com" target="_blank">
+        <span class="sr-only">Escribir por Gmail</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="36" height="36" fill="currentColor">
+          <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.511l-8 5.714-8-5.714V6h16zM4 18V8.489l8 5.714 8-5.714V18H4z"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
 
-	   <Search client:load />
-
+  <!-- Buscador -->
+  <Search client:load />
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+/* --- HEADER BASE --- */
+header {
+  margin: 0;
+  padding: 0 1em;
+  background: white;
+  box-shadow: 0 2px 8px rgba(var(--black), 5%);
+}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+h2 {
+  margin: 0;
+  font-size: 1em;
+}
 
+h2 a,
+h2 a.active {
+  text-decoration: none;
+}
 
-	/* Estilos SOLO para el buscador, no afectan nav/header */
-.search-form {
-  position: absolute;
-  top: 110px;      /* Más abajo para que no lo tape el nav, ajusta según necesites */
-  left: 16px;     /* Muy pegado al borde izquierdo */
-  width: 180px;   /* Más pequeño */
+/* --- NAV ESCRITORIO --- */
+nav {
   display: flex;
   align-items: center;
-  background: rgba(235, 235, 235, 0.6); /* Gris claro translúcido */
+  justify-content: space-between;
+}
+
+.internal-links {
+  display: flex;
+  gap: 0.5em;
+}
+
+.internal-links a {
+  padding: 1em 0.5em;
+  color: var(--black);
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+.internal-links a.active {
+  border-bottom-color: var(--accent);
+}
+
+/* === Restaurar estilo ORIGINAL de iconos sociales === */
+.social-links a svg {
+  fill: #666;      /* Gris original */
+  color: #666;     /* Por si el SVG usa currentColor */
+  transition: color 0.2s, fill 0.2s;
+}
+
+.social-links a:hover svg {
+  fill: #333;      /* Gris más oscuro al hover */
+  color: #333;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;      /* Sin espacio extra para evitar el borde azul */
+  margin: 0 4px;   /* Separación ligera EXACTA como antes */
+}
+
+.social-links {
+  display: flex;
+  gap: 6px;        /* Espaciado suave, igual al original visual */
+}
+
+
+/* --- HAMBURGUESA BOTÓN --- */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* --- BUSCADOR --- */
+.search-form {
+  position: absolute;
+  top: 110px;
+  left: 16px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  background: rgba(235, 235, 235, 0.6);
   border-radius: 7px;
   box-shadow: 0 2px 8px rgba(80,80,80,0.09);
   padding: 2px 6px;
@@ -98,7 +136,7 @@ import Search from './Search.astro';
 }
 
 .search-form input[type="text"] {
-  background: rgba(250,250,250,0.4);   /* Blanco muy translúcido */
+  background: rgba(250,250,250,0.4);
   color: #555;
   border: none;
   border-radius: 3px;
@@ -109,7 +147,7 @@ import Search from './Search.astro';
 }
 
 .search-form button {
-  background: rgba(220,220,220,0.4);   /* Gris claro translúcido */
+  background: rgba(220,220,220,0.4);
   color: #666;
   border: none;
   border-radius: 3px;
@@ -121,10 +159,39 @@ import Search from './Search.astro';
 }
 
 .search-form button:hover {
-  background: rgba(200,200,200,0.4);  /* Se nota sólo al pasar el mouse */
+  background: rgba(200,200,200,0.4);
 }
 
+/* --- MEDIA QUERY MÓVIL --- */
 @media (max-width: 720px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .internal-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Oculto por defecto */
+  }
+
+  .internal-links.show {
+    display: flex; /* Se muestra al abrir menú */
+  }
+
+  .internal-links a {
+    width: 100%;
+    padding: 0.8em 0;
+  }
+
+  .social-links {
+    display: none; /* igual que antes, solo oculto en móvil */
+  }
+
   .search-form {
     position: static;
     width: 95%;
@@ -134,6 +201,12 @@ import Search from './Search.astro';
     box-shadow: none;
   }
 }
-
-
 </style>
+
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".internal-links");
+toggle?.addEventListener("click", () => {
+  links.classList.toggle("show");
+});
+</script>
